@@ -26,7 +26,7 @@ public class PrinterHelper
     }
 
     public static Student createStudentMenu( Scanner scanner )
-        throws ParseException
+        throws ParseExceptiongit init
     {
         System.out.println( "|-------------------------------------|" );
         System.out.println( "| . 1 Register Student                |" );
