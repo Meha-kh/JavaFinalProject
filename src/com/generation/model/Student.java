@@ -22,7 +22,11 @@ public class Student
     }
 
     public void enrollToCourse( Course course )
-    {
+    { if (!isAttendingCourse(course.getCode())) {
+        courses.add(course);
+    } else {
+        System.out.println("Student already enrolled in course.");
+    }
         //TODO implement this method
     }
 
@@ -33,11 +37,17 @@ public class Student
 
 
     public boolean isAttendingCourse( String courseCode )
-    {
+    { for (Course c : courses) {
+        if (c.getCode().equals(courseCode)) {
+            return true;
+        }
         //TODO implement this method
+    }
         return false;
     }
-
+    public List<Course> getCourses() {
+        return courses;
+    }
     @Override
     public double getAverage()
     {
@@ -47,6 +57,6 @@ public class Student
     @Override
     public String toString()
     {
-        return "Student {" + super.toString() + "}";
+        return "Student {" + super.toString() + courses + "}";
     }
 }
